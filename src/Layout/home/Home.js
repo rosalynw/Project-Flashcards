@@ -17,7 +17,7 @@ function Home() {
 
     return (
         <div>
-            <Link >Create Deck</Link>
+            <Link to="/decks/new" >Create Deck</Link>
             <DeckList decks={decks} />
         </div>
     )
