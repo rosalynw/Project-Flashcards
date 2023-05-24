@@ -48,13 +48,19 @@ export default function StudyDeck() {
     const nextCardHandler = () => {
         setIsFlipped(!isFlipped);
         //setCardPosition(cardPositon + 1);
-        console.log(cardPositon);
+        //console.log(cardPositon);
         if (cardPositon !== numberOfCards) {
-            cards[setCardPosition(cardPositon + 1)]
+            setCardPosition(cardPositon + 1)
+            setCard(cards[cardPositon])
         } else {
             const restartDeck = window.confirm("Restart cards? \n Click 'cancel' to return to the home page");
             if (!restartDeck) {
                 history.push("/")
+            } else {
+                //change card number
+                setCardPosition(1);
+                //change card rendered
+                setCard(cards[0])
             }
         }
     }
@@ -71,11 +77,10 @@ export default function StudyDeck() {
             </nav>
             <h2>Study: {deck.name}</h2>
             <div>
-                <h5>Card {cardPositon} of {numberOfCards} </h5>
                 {/* render each card as it's own component */}
                 {/* pass button functionality */}
-                <StudyCard card={card} isFlipped={isFlipped} flipHandler={flipHandler} nextCardHandler={nextCardHandler}/>
-                
+                <StudyCard card={card} isFlipped={isFlipped} flipHandler={flipHandler} nextCardHandler={nextCardHandler} cardPositon={cardPositon} numberOfCards={numberOfCards}/>
+                {/* IF less than 2 cards  */}
             </div>
         </div>
     )
