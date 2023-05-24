@@ -4,6 +4,10 @@ import NotFound from "./NotFound";
 import {Switch, Route} from "react-router-dom"
 import Home from "./home/Home";
 import CreateDeck from "./Deck/CreateDeck";
+import ViewDeck from "./Deck/ViewDeck";
+import EditCard from "./Card/EditCard";
+import EditDeck from "./Deck/EditDeck";
+import StudyDeck from "./Deck/StudyDeck";
 
 
 function Layout() {
@@ -15,19 +19,24 @@ function Layout() {
       <Switch>
         {/* TODO: Implement the screen starting here */}
         <Route exact path="/">
+          {/* Decks are nested within Home but create Deck is a */}
           <Home />
         </Route>
         <Route path="/decks/:deckId/study">
-          {/* <Study /> */}
+          <StudyDeck /> 
         </Route>
         <Route path="/decks/new">
           <CreateDeck /> 
         </Route>
-        <Route path="/decks/:deckId">
-          {/* <DeckList /> */}
+        {/* the "deck" screen is to load and individual deck and all it cards */}
+        <Route exact path="/decks/:deckId">
+          <ViewDeck />
         </Route>
-        <Route>
-          {/* <AddCard /> */}
+        <Route path="/decks/:deckId/edit">
+          <EditDeck />
+        </Route>
+        <Route path="/decks/:deckId/cards/:cardId/edit">
+          <EditCard />
         </Route>
         <Route >
           <NotFound />

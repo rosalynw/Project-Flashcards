@@ -17,7 +17,7 @@ function CreateDeck() {
 
     const [formData, setFormData ] = useState({...initialFormState});
 
-    //
+    //updates by the value
     const handleChange = ({target}) => {
         setFormData({
             ...formData,

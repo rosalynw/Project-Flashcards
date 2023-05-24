@@ -13,7 +13,7 @@ export default function Deck({deck}) {
     const handleDelete = async(deckId) =>{
         const result = window.confirm("Are you sure you want to delete this deck?");
         if(result){
-          deleteDeck(deckId).then(history.go(0))
+          deleteDeck(deckId).then(history.go("/"))
         }
        
     }

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import {listDecks } from "../../utils/api"
 import {Link} from "react-router-dom"
 import DeckList from "../Deck/DeckList";
+import { Button } from "@mui/material";
+import { Add } from "@mui/icons-material";
 
 function Home() {
     //should have buttons and list of decks
@@ -17,7 +19,7 @@ function Home() {
 
     return (
         <div>
-            <Link to="/decks/new" >Create Deck</Link>
+            <Link to="/decks/new" ><Button variant="contained"><Add />Create Deck</Button></Link>
             <DeckList decks={decks} />
         </div>
     )
