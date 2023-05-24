@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { readDeck } from "../../utils/api";
 import { useParams, Link } from "react-router-dom";
-import { Home } from "@mui/icons-material";
+import { Add, Home } from "@mui/icons-material";
 import { Button } from "@mui/material";
 import { useHistory } from "react-router-dom";
 import StudyCard from "../Card/StudyCard";
@@ -73,14 +73,23 @@ export default function StudyDeck() {
             {/* flip button then next button after is flipped */}
             {/* must only show card front OR back AND counts through array of cards */}
             <nav>
-                <Link><Home />Home</Link> / {deck.name} / Study
+                <Link to="/"><Home />Home</Link> / {deck.name} / Study
             </nav>
             <h2>Study: {deck.name}</h2>
             <div>
                 {/* render each card as it's own component */}
                 {/* pass button functionality */}
-                <StudyCard card={card} isFlipped={isFlipped} flipHandler={flipHandler} nextCardHandler={nextCardHandler} cardPositon={cardPositon} numberOfCards={numberOfCards}/>
                 {/* IF less than 2 cards  */}
+                {/* route add button to add card component */}
+                {numberOfCards <= 2 ? (
+                    <div>
+                        <h3>Not enough cards.</h3>
+                        <p>You need at least 3 cards to study. There are {numberOfCards} cards in this deck.</p>
+                        <Link to={`/decks/${deckId}/cards/new`}><Button variant="contained"><Add />Add Cards</Button></Link>
+                    </div>
+                ) : (
+                <StudyCard card={card} isFlipped={isFlipped} flipHandler={flipHandler} nextCardHandler={nextCardHandler} cardPositon={cardPositon} numberOfCards={numberOfCards}/>
+                )}
             </div>
         </div>
     )
