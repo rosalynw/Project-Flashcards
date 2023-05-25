@@ -6,21 +6,23 @@ import { Link } from "react-router-dom";
 import { useRouteMatch } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-function Card({card}) {
+function Card({card , id}) {
     //return individual cards
     //display card
     //use readcard
     //edit to take to edit page
-    const cardId = useParams();
-    console.log(card);
-    const id = card.id;
+    
+    //console.log(card);
     const {url} = useRouteMatch();
-    const handleDelete = (id) => {
-        const result = window.confirm("Delete this card? \n You will not be able to recover it.");
-        deleteCard(id)
+
+    const handleDelete = async () => {
+        const confirmDelete = window.confirm("Delete this card? \n You will not be able to recover it.");
+        if (confirmDelete) {
+            await deleteCard(id)
+        }
     }
 
-    console.log(card.front)
+    //console.log(card.front)
     return (
         <div>
             <div className="row">
