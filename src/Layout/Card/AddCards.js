@@ -57,7 +57,7 @@ export default function AddCards() {
     return (
         <div>
             <nav>
-                <Link><Home />Home</Link> / {deck.name} / Add Card
+                <Link to="/"><Home />Home</Link> / {deck.name} / Add Card
             </nav>
             <h3>{deck.name}: Add Card</h3>
             <form>
