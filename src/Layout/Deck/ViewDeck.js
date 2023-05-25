@@ -1,7 +1,7 @@
 import { Book, Draw, Home, Add, Delete } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useRouteMatch } from "react-router-dom";
-import { readDeck } from "../../utils/api";
+import { deleteDeck, readDeck } from "../../utils/api";
 import { Button } from "@mui/material";
 import CardList from "../Card/CardList";
 
@@ -26,7 +26,10 @@ function ViewDeck() {
 
     // to delete deck like on individual deck cards
     const deleteHandler = async() => {
-        const response = window.confirm("You will not be able to recover it.")
+        const deleteConfirm = window.confirm("Delete this deck? \n You will not be able to recover it.");
+        if (deleteConfirm) {
+            await deleteDeck(deckId);
+        }
     }
     return (
         <div>
@@ -39,7 +42,7 @@ function ViewDeck() {
                 {/* edit button, study button, add cards, delete. major changes are edit and add cards */}
                 <Link to={`${url}/edit`}><Button><Draw />Edit</Button></Link>
                 <Link to={`${url}/study`}><Button><Book />Study</Button></Link>
-                <Link to={`${url}cards/new`}><Button><Add />Add Cards</Button></Link>
+                <Link to={`${url}/cards/new`}><Button><Add />Add Cards</Button></Link>
                 <Button onClick={deleteHandler}><Delete/></Button>
             </div>
             <div>

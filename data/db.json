@@ -48,24 +48,6 @@
       "back": "b",
       "deckId": 1,
       "id": 7
-    },
-    {
-      "front": "Hello",
-      "back": "Cool Bro",
-      "deckId": 2,
-      "id": 8
-    },
-    {
-      "front": "Hello",
-      "back": "Cool Bro",
-      "deckId": 2,
-      "id": 9
-    },
-    {
-      "front": "efes",
-      "back": "def",
-      "deckId": 2,
-      "id": 10
     }
   ]
 }

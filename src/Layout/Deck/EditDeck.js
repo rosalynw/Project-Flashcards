@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { readCard, readDeck } from "../../utils/api";
+import { readCard, readDeck, updateDeck } from "../../utils/api";
 import { useParams, Link } from "react-router-dom";
 import { Button} from "@mui/material";
 import { Home, Label } from "@mui/icons-material";
@@ -20,6 +20,19 @@ export default function EditDeck() {
 
     },[deckId])
 
+    const changeHandler = ({target}) => {
+        setDeck({
+            ...deck,
+            [target.name]: target.value,
+        })
+    }
+
+    //on submit call updateDeck
+    const submitHandler = async (event) => {
+        event.preventDefault();
+        await updateDeck(deck);
+    }
+
 
     return (
         <div>
@@ -34,6 +47,8 @@ export default function EditDeck() {
                     <input
                     id="name"
                     name="name"
+                    value={deck.name}
+                    onChange={changeHandler}
                     ></input>
                 </div>
                 <div>
@@ -41,12 +56,14 @@ export default function EditDeck() {
                     <textarea
                     id="description"
                     name="description"
+                    value={deck.description}
+                    onChange={changeHandler}
                     >
                     </textarea>
                 </div>
             </form>
-            <Button variant="contained" style={{backgroundColor: "gray"}}>Cancel</Button>
-            <Button variant="contained">Submit</Button>
+            <Link to={`/decks/${deckId}`}><Button variant="contained" style={{backgroundColor: "gray"}}>Cancel</Button></Link>
+            <Button variant="contained" onClick={submitHandler}>Submit</Button>
         </div>
     )
 }
