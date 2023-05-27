@@ -81,7 +81,7 @@ export default function AddCards() {
                     onChange={handleChange}
                     ></textarea>
                 </div>
-                <Link to={`/decks/${deckId}/`}><Button variant="contained" style={{backgroundColor: "gray"}}>Done</Button></Link>
+                <Link to={`/decks/${deckId}`}><Button variant="contained" style={{backgroundColor: "gray"}}>Done</Button></Link>
                 <Button variant="contained" onClick={submitHandler}>Save</Button>
             </form>
         </div>
