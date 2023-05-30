@@ -8,7 +8,7 @@ import { Delete } from "@mui/icons-material";
 export default function Deck({deck}) {
   // obtains access to browser history controls
   const history = useHistory();
-  const {deckId } = useParams();
+  
 
     // handles the delete of the deck asynchronously, then redirects
     const handleDelete = async(deckId) =>{
