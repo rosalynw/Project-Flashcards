@@ -10,7 +10,7 @@ export default function CreateCard({card, changeHandler, isFront, isBack}) {
     
     return (
         <div>
-            <form>
+            
             <form className="cardEditForm">
                 <div className="cardEditFront">
                     <label htmlFor="front">Front</label>
@@ -33,7 +33,6 @@ export default function CreateCard({card, changeHandler, isFront, isBack}) {
                     onChange={changeHandler}
                     ></textarea>
                 </div>
-            </form>
             </form>
         </div>
     )
