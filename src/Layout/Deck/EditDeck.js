@@ -6,7 +6,7 @@ import { Home, Label } from "@mui/icons-material";
 
 export default function EditDeck() {
     const { deckId } = useParams();
-    const [deck, setDeck] = useState([]);
+    const [deck, setDeck] = useState({name: "", description: ""});
 
     useEffect(() => {
         async function fetchDeck() {

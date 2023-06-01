@@ -50,7 +50,7 @@ export default function EditCard() {
         await updateCard(card);
         history.push(`/decks/${deckId}`)
     }
-    console.log(card.front)
+   
 
     return (
         <div>

@@ -59,7 +59,7 @@ export default function AddCards() {
             <nav>
                 <Link to="/"><Home />Home</Link> / {deck.name} / Add Card
             </nav>
-            <h3>{deck.name}: Add Card</h3>
+            <h3><span> {deck.name} </span> : <span>Add Card </span></h3>
             <form>
                 <div>
                     <label>Front</label>

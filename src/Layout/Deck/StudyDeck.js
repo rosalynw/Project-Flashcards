@@ -75,7 +75,7 @@ export default function StudyDeck() {
             <nav>
                 <Link to="/"><Home />Home</Link> / {deck.name} / Study
             </nav>
-            <h2>Study: {deck.name}</h2>
+            <h2><span> Study </span>: <span>{deck.name}</span></h2>
             <div>
                 {/* render each card as it's own component */}
                 {/* pass button functionality */}
