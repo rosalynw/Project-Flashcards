@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
-      name="Thinkful Flashcard API"
-      content="Introduction to the Thinkful Flashcard API"
+      name="description"
+      content="Web site created using create-react-app"
     />
     <link
       rel="stylesheet"
@@ -35,58 +35,20 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <script src="//cdn.jsdelivr.net/npm/pouchdb@7.2.2/dist/pouchdb.min.js"></script>
-    <title>Thinkful Flashcard API</title>
+    <title>Thinkful Flashcards</title>
   </head>
   <body>
-    <header class="jumbotron bg-dark">
-      <div class="container text-white">
-        <h1 class="display-4">Flashcard-o-matic JSON API</h1>
-        <p class="lead">
-          Powered by
-          <a href="https://github.com/typicode/json-server">json-server</a>
-        </p>
-      </div>
-    </header>
-    <main class="container">
-      <div class="list-group">
-        <a
-          class="list-group-item list-group-item-action"
-          href="/decks"
-          target="_blank"
-          >All Decks: <code>/decks</code></a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="/decks?_embed=cards"
-          target="_blank"
-          >All Decks with cards embedded - <code>/decks?_embed=cards</code></a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="/decks/1?_embed=cards"
-          target="_blank"
-          >Deck 1 with cards embedded - <code>/decks/1?_embed=cards</code></a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="/deck/1/cards"
-          target="_blank"
-          >Deck 1 cards: <code>/decks/1/cards</code></a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="/cards"
-          target="_blank"
-          >All Cards: <code>/cards</code></a
-        >
-        <a
-          class="list-group-item list-group-item-action"
-          href="/cards?deckId=1"
-          target="_blank"
-          >All Cards for Deck 1: <code>/cards?deckId=1</code></a
-        >
-      </div>
-    </main>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
