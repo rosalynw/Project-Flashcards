@@ -3,6 +3,7 @@ import { readCard, readDeck, updateCard } from "../../utils/api";
 import { useParams, Link, useHistory } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Home } from "@mui/icons-material";
+import CardForm from "./CardForm";
 
 export default function EditCard() {
     //nav bar with home link / deck name / edit card "cardid"
@@ -57,28 +58,8 @@ export default function EditCard() {
             <nav>
                 <Link to="/"><Home />Home</Link> / {deck.name} / Edit Card {cardId}
             </nav>
-            <h2>Edit Card</h2>
-            <form className="cardEditForm">
-                <div className="cardEditFront">
-                    <label htmlFor="front">Front</label>
-                    {/* card is prefilled with current card front and back text */}
-                    <textarea
-                    id="front"
-                    name="front"
-                    value={card.front}
-                    onChange={changeHandler}
-                    ></textarea>
-                </div>
-                <div className="cardEditBack">
-                    <label htmlFor="back">Back</label>
-                    <textarea
-                    id="back"
-                    name="back"
-                    value={card.back}
-                    onChange={changeHandler}
-                    ></textarea>
-                </div>
-            </form>
+            <h3>Edit Card</h3>
+            <CardForm card={card} changeHandler={changeHandler} />
             <Link to={`/decks/${deckId}`}><Button variant="contained" style={{backgroundColor: "gray"}}>Cancel</Button></Link>
             <Button variant="contained" onClick={submitHandler}>Submit</Button>
         </div>

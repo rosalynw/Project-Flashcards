@@ -4,6 +4,7 @@ import { createCard, readDeck } from "../../utils/api";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { Home } from "@mui/icons-material";
+import CardForm from "./CardForm";
 
 
 export default function AddCards() {
@@ -60,30 +61,10 @@ export default function AddCards() {
                 <Link to="/"><Home />Home</Link> / {deck.name} / Add Card
             </nav>
             <h3><span> {deck.name} </span> : <span>Add Card </span></h3>
-            <form>
-                <div>
-                    <label>Front</label>
-                    <textarea
-                    id="front"
-                    name="front"
-                    placeholder="Front side of card"
-                    value={card.front}
-                    onChange={handleChange}
-                    ></textarea>
-                </div>
-                <div>
-                    <label>Back</label>
-                    <textarea
-                    id="back"
-                    name="back"
-                    placeholder="Back side of card"
-                    value={card.back}
-                    onChange={handleChange}
-                    ></textarea>
-                </div>
+            <CardForm card={card} changeHandler={handleChange} isFront={"Front"} isBack={"Back"}/>
                 <Link to={`/decks/${deckId}`}><Button variant="contained" style={{backgroundColor: "gray"}}>Done</Button></Link>
                 <Button variant="contained" onClick={submitHandler}>Save</Button>
-            </form>
+
         </div>
     )
 }

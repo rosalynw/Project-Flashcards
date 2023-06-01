@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {listDecks } from "../../utils/api"
+import {listDecks} from "../../utils/api"
 import {Link} from "react-router-dom"
 import DeckList from "../Deck/DeckList";
 import { Button } from "@mui/material";
